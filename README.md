@@ -1,4 +1,4 @@
-# demo_camera
+# pan-tilt
 
 [![support level: community](https://img.shields.io/badge/support%20level-community-lightgray.svg)](https://rosindustrial.org/news/2016/10/7/better-supporting-a-growing-ros-industrial-software-platform)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -15,8 +15,8 @@ Pan-tilt camera controller.
 ## Installation
 
 ```bash
-git clone git@github.com:takuya-ki/demo_camera.git
-cd demo_camera
+git clone git@github.com:takuya-ki/pan-tilt.git
+cd pan-tilt
 pip install -r requirements.txt
 ```
 
