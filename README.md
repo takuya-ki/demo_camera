@@ -44,7 +44,9 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-
+1. Input the camera configuration in config_example.py
+2. Rename config_example.py to config.py `mv config_example.py config.py`
+3. Execute a script to open a GUI
 ```bash
 python src/tapogui.py [camera_type]  # 'c200' or 'c225'
 ```
