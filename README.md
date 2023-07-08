@@ -7,10 +7,23 @@ Pan-tilt camera controller.
 
 ## Dependency
 
-- Python 3.9.16
-  - rtsp 1.1.12
-  - pysimplegui 4.60.5
-  - onvif_zeep 0.2.12
+### Python dependency
+- Python 3.8.10
+  - rtsp        1.1.12
+  - PySimpleGUI 4.60.5
+  - onvif-zeep  0.2.12
+  - Pillow      10.0.0
+  - utllib3     1.26.8
+
+### Available cameras
+- tp-link Tapo C200  
+
+<img src=image/c200.jpg height=180> <img src=image/c200_gui.png height=180>  
+
+- tp-link Tapo C225  
+
+<img src=image/c225.jpg height=180> <img src=image/c225_gui.png height=180>  
+
 
 ## Installation
 
@@ -20,10 +33,20 @@ cd pan-tilt
 pip install -r requirements.txt
 ```
 
+### Anaconda
+
+```bash
+git clone git@github.com:takuya-ki/pan-tilt.git
+cd pan-tilt
+conda create -n tapo python=3.8.10 -y
+conda activate tapo
+pip install -r requirements.txt
+```
+
 ## Usage
 
 ```bash
-python src/tapogui.py
+python src/tapogui.py [camera_type]  # 'c200' or 'c225'
 ```
 
 ## Author / Contributor

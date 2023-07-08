@@ -1,3 +1,5 @@
-rtsp
-pysimplegui
-onvif_zeep
+rtsp==1.1.12
+pysimplegui==4.60.5
+onvif_zeep==0.2.12
+pillow==10.0.0
+urllib3==1.26.8
