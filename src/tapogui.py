@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 
 import sys
@@ -15,7 +14,7 @@ sg.theme('Dark Brown')
 
 
 class TapoGUI():
-    
+
     def __init__(
             self,
             user,
@@ -86,19 +85,19 @@ class TapoGUI():
              sg.Button('↑', size=(4, 1),
                        font='Helvetica 14', key='-pt_topcenter-'),
              sg.Button('↗', size=(4, 1),
-                       font='Helvetica 14', key='-pt_topright-'),],
+                       font='Helvetica 14', key='-pt_topright-')],
             [sg.Button('←', size=(4, 1),
                        font='Helvetica 14', key='-pt_left-'),
              sg.Button('〇', size=(4, 1),
                        font='Helvetica 14', key='-pt_center-'),
              sg.Button('→', size=(4, 1),
-                       font='Helvetica 14', key='-pt_right-'),],
+                       font='Helvetica 14', key='-pt_right-')],
             [sg.Button('↙', size=(4, 1),
                        font='Helvetica 14', key='-pt_btmleft-'),
              sg.Button('↓', size=(4, 1),
                        font='Helvetica 14', key='-pt_btmcenter-'),
              sg.Button('↘', size=(4, 1),
-                       font='Helvetica 14', key='-pt_btmright-'),],
+                       font='Helvetica 14', key='-pt_btmright-')],
         ]
 
         is_streaming = False
@@ -110,9 +109,15 @@ class TapoGUI():
                 break
 
             elif event == '-start-':
-                rtsp_url = f"rtsp://{values['-user-']}:{values['-pass-']}@{values['-ipaddr-']}:{values['-port-']}/{values['-stream-']}"
+                rtsp_url = "rtsp://" + \
+                    str(values['-user-']) + ":" + \
+                    str(values['-pass-']) + "@" + \
+                    str(values['-ipaddr-']) + ":" + \
+                    str(values['-port-']) + "/" + \
+                    str(values['-stream-'])
                 client = rtsp.Client(rtsp_server_uri=rtsp_url, verbose=True)
-                onvif_request = OnvifRequest(username=values['-user-'], password=values['-pass-'])
+                onvif_request = OnvifRequest(
+                    username=values['-user-'], password=values['-pass-'])
                 url = f"http://{values['-ipaddr-']}:{values['-onvif_port-']}/"
                 headers = {'Content-Type': 'text/xml; charset=utf-8'}
                 is_streaming = True
@@ -139,7 +144,10 @@ class TapoGUI():
                     oreq = onvif_request.absolute_move(
                         self._cur_x, self._cur_y)
                     req = urllib.request.Request(
-                        url, data=oreq.encode(), method='POST', headers=headers)
+                        url,
+                        data=oreq.encode(),
+                        method='POST',
+                        headers=headers)
                     try:
                         with urllib.request.urlopen(req) as response:
                             pass
