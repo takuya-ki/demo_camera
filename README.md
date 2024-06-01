@@ -28,19 +28,13 @@ Pan-tilt camera controller.
 ## Installation
 
 ```bash
-git clone git@github.com:takuya-ki/pan-tilt.git
-cd pan-tilt
-pip install -r requirements.txt
+git clone git@github.com:takuya-ki/pan-tilt.git && cd pan-tilt && pip install -r requirements.txt
 ```
 
 ### Anaconda
 
 ```bash
-git clone git@github.com:takuya-ki/pan-tilt.git
-cd pan-tilt
-conda create -n tapo python=3.8.10 -y
-conda activate tapo
-pip install -r requirements.txt
+git clone git@github.com:takuya-ki/pan-tilt.git && cd pan-tilt && conda create -n tapo python=3.8.10 -y && conda activate tapo && pip install -r requirements.txt
 ```
 
 ## Usage
